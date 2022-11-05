@@ -45,8 +45,8 @@ head(data)
 This data structure is as follows:
 >- id is the sample identifier
 >- cs is the size within a specific cluster
->- Lij is the left endpoint of an observed interval
->- Rij is the right endpoint of an observed interval
+>- Lij is the left endpoint of an observed interval, which takes the value NA for right-censored observations
+>- Rij is the right endpoint of an observed interval, which takes the value NA for left-censored observations
 >- DL is the left censoring indicator
 >- DI is the interval censoring indicator
 >- X is the covariate in the proportional hazards model 
