@@ -26,7 +26,7 @@ This function generates a data set according to the simulation under scenario I 
 >- beta is the coefficient in the proportional hazards model
 >- alpha is the coefficients in the binomial model
 >- kappa is the coefficient of the random effect
->- sigma is the variance of the random effect
+>- sigma is the standard deviation of the random effect
 
 Example:
 ```
