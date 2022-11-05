@@ -1,7 +1,7 @@
 # JointCSsurv
 JointCSsurv (which stands for <ins>**Joint**</ins> model for <ins>**C**</ins>luster <ins>**S**</ins>ize and <ins>**surv**</ins>ival outcome) is a package that performs semiparametric estimation and inference for clustered interval-censored data with informative cluster size using the method proposed by Lee et al. (2022) <DOI: xx/xxxx>.
 
-**JointCSsurv** relies on the R-packages splines2, numDeriv, statmod, plyr, which are hosted on CRAN.
+**JointCSsurv** relies on the R-packages <mark>splines2</mark>, numDeriv, statmod, plyr, which are hosted on CRAN.
 
 # How to import the Functions
 > install.packages("devtools")<br />
