@@ -1,5 +1,5 @@
 # JointCSsurv
-JointCSsurv (which stands for <ins>**Joint**</ins> model for <ins>**C**</ins>luster <ins>**S**</ins>ize and <ins>**surv**</ins>ival outcome) is a package that performs semiparametric estimation and inference for clustered interval-censored data with informative cluster size using the method proposed by Lee et al. (2022) <DOI: [xx/xx] (https://doi.org/10.1002/sim.8910)>.
+JointCSsurv (which stands for <ins>**Joint**</ins> model for <ins>**C**</ins>luster <ins>**S**</ins>ize and <ins>**surv**</ins>ival outcome) is a package that performs semiparametric estimation and inference for clustered interval-censored data with informative cluster size using the method proposed by Lee et al. (2022) <DOI: [xx/xx] (https://doi.org/xx/xx)>.
 
 **JointCSsurv** relies on the R-packages `splines2`, `numDeriv`, `statmod`, `plyr`, which are hosted on CRAN.
 
@@ -9,23 +9,27 @@ JointCSsurv (which stands for <ins>**Joint**</ins> model for <ins>**C**</ins>lus
 > source_url("https://github.com/lcyjames/WeibullCMs/blob/845d70f953b0ce692536bfd928fc0c72165fb4a8/CoreFunctions.R?raw=TRUE")
 
 # Usage #
-The package contains 3 functions:
+The package contains 2 functions and 1 dataset:
 |Functions  | Description|
 |------------- | -------------|
-JointCSsurvSIM  | Generate a data set according to the simulation under scenario I of the proposed model in Lee et al. (2022)
-Est.ICScure  |  Perform the semiparametric estimation method of Lee et al. (2022)
+JointCSsurvSIM  | Generate a data set according to the simulation study in Lee et al. (2022)
+JointCSsurvEST  | Perform the semiparametric estimation methods of Lee et al. (2022)
+
+|Dataset | Description|
+|------------- | -------------|
+GAAD | A cross-sectional periodontal disease study conducted on Gullah-speaking African-American Type-2 Diabetics (GAAD)
 
 <ins>**JointCSsurvSIM**</ins>
 
 ```
 JointCSsurvSIM(seed = NA, n, m, beta, alpha, kappa, sigma)
 ```
-This function generates a data set according to the simulation under scenario I of the proposed model in Lee et al. (2022) with the following arguments:
+This function generates a data set according to the model under scenario I of the simulation study in Lee et al. (2022) that takes the arguments:
 >- `n` is the sample size
 >- `m` is the maximum cluster size in the binomial distribution
 >- `beta` is the coefficient in the proportional hazards model
 >- `alpha` is the coefficients in the binomial model
->-` kappa` is the coefficient of the random effect
+>- `kappa` is the coefficient of the random effect
 >- `sigma` is the standard deviation of the random effect
 
 Example:
@@ -56,59 +60,68 @@ This data structure is as follows:
 <ins>**JointCSsurvEST**</ins>
 
 ```
-JointCSsurvEST(data, K=7, P, Q, deg=3, max.m, M=20, tolerance=10^{-3}, gam_0=NA, beta_0=NA, alpha_0=NA, kappa_0=NA, sigma_0=NA, TRACE=FALSE)
+JointCSsurvEST(data, K=7, P, Q, deg=3, max.m, M=20, tolerance=10^{-3}, 
+               gam_0=NA, beta_0=NA, alpha_0=NA, kappa_0=NA, sigma_0=NA, TRACE=FALSE)
 ```
-This function performs the semiparametric estimation of Lee et al. (2022). The details of the arguments are as follows:
-This data structure is as follows:
->- `data`
->- `K`
->- `P`
->- `Q`
->- `dge`
->- `max.m`
->- `M`
->- `tolerance`
->- gam_0=NA
->- beta_0=NA
->- alpha_0=NA
->- kappa_0=NA
->- sigma_0=NA
->- TRACE=FALSE
-
-
-`data` is a `n x (p+3)` matrix, where `n` is the sample size and `p` is the number of covariates. The first column consists of cluster indices, the second column consists of the observation time, the third column consists of the event indicator, and the fourth to the last columns consist of the covariates (not including the intercept). The set of covariates can be empty. The format of `data` is as follow:
-
-**Cluster Index**  | **Observation Time**  | **Event Indicator** | **1<sup>st</sup> covariate** | **2<sup>nd</sup> covariate** | ... | **p<sup>th</sup> covariate**
-------------- | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
-1  | 3.7322 | 1 | 1 | 0.0888 | ... | 1
-1  | 4.0000 | 1 | 0 | -0.4965 | ... | 0
-
-
+This function performs the semiparametric estimation methods of Lee et al. (2022). The details of the arguments are as follows:
+>- `data` is a data.frame object shown in the above, with columns `id`, `cs`, `Lij`, `Rij`, `DL`,`DI`,`X[1]`,...,`X[P]`,`Z[1]`,...,`Z[Q-1]`
+>- `K` is the dimension of parameter gamma; the order of the I-splines equal to (`K`-`deg`+1); `K` must be greater than or equal to `deg`
+>- `P` is the dimension of covariate X in the proportional hazards model
+>- `Q` is the dimension of covariate Z (without an intercept) plus 1 in the binomial model 
+>- `deg` is the degree of polynomial used in the I-splines, set to 3 by default
+>- `max.m` is the maximum cluster size in the binomial distribution
+>- `M` is the number of nodes used in adaptive Gauss-Hermite quadrature, set to 20 by default
+>- `tolerance` is the stopping criterion for the EM algorithm, set to 10^{-3} by default
+>- `gam_0` is a vector of positive constants of size `K` for the initial values of gamma, set to be rep(2,K) by default (gam_0=NA)
+>- `beta_0` is a vector of constants of size `P` for the initial values of parameter beta, set to be rep(0,P) by default (beta_0=NA)
+>- `alpha_0` is a vector of constants of size `Q` for the initial values of parameter alpha, set to be rep(0,Q) by default (alpha_0=NA)
+>- `kappa_0` is a constant for the initial values of parameter kappa, set to be 0 by default (kappa_0=NA)
+>- `sigma_0` is a constant for the initial values of parameter sigma, set to be 2 by default (sigma_0=NA)
+>- `TRACE` is an option for tracking the converging path of the parameter estimation, set to be FALSE by default
 
 Example:
 ```
-Dataset <- ICDASim(seed = 1942, n = 100, beta00 = 0.5, beta10 = -1, beta20 = 1, cs = 40, rho = 0.5, gamma = 0.5)
-Result <- Est.ICScure(data = Dataset, rho = 0.5, degree = 3, weighting = TRUE)
+Dataset<-JointCSsurvSIM(seed = 1234, n = 50, m = 10, beta = 1, alpha = c(1,log(2)), kappa = -0.5, sigma= 1)
+Result <-JointCSsurvEST(data = Dataset, K = 7, P = 1, Q = 2, deg = 3, max.m = 10, tolerance = 10^{-3}, M = 20, TRACE = FALSE)
 Result
 
-# $degree
-# [1] 3
-#
-# $psi
-# [1] 0.9917128 0.9955245 1.0000000
-#
-# $beta
-# [1]  0.7091996 -1.0196841  0.9260482
-#
-# $betaSE
-# [1] 0.13000664 0.11749335 0.07599541
-#
-# $iteration
-# [1] 44
-#
-# $covergence
-# [1] "TRUE"
+# $loglik
+# [1] -943.2061
+# 
+# $gam.hat
+# [1] 0.1006968 0.0913659 0.4115768 0.5069621 0.8006600 0.3812705 0.5546317
+# 
+# $alpha.hat
+# [1] 1.09652 0.53590
+# 
+# $kappa.hat
+# [1] -0.5807313
+# 
+# $beta.hat
+# [1] 0.901442
+# 
+# $sigma.hat
+# [1] 0.8442931
+# 
+# $alpha.hat.se
+# [1] 0.1303666 0.1338147
+# 
+# $kappa.hat.se
+# [1] 0.173564
+# 
+# $beta.hat.se
+# [1] 0.07883315
+# 
+# $sigma.hat.se
+# [1] 0.1251456
 ```
+
+<ins>**GAAD data**</ins>
+
+```
+load("GAAD.Rda")
+```
+
 
 # Contact #
 Lee Chun Yin, James <<james-chun-yin.lee@polyu.edu.hk>>
@@ -116,4 +129,6 @@ Lee Chun Yin, James <<james-chun-yin.lee@polyu.edu.hk>>
 # Reference #
 Lee, C. Y., Wong, K. Y., Lam, K. F.,& Bandyopadhyay, D. (2022). A semiparametric joint model for cluster size and subunit-specific interval-censored
 outcomes. Biometrics [online], DOI:xx/xx
+
+Fernandes, J. K., Wiegand, R. E., Salinas, C. F., Grossi, S. G., Sanders, J. J., Lopes‐Virella, M. F., & Slate, E. H. (2009). Periodontal disease status in Gullah African Americans with type 2 diabetes living in South Carolina. Journal of Periodontology, 80(7), 1062-1068, DOI:10.1902/jop.2009.080486
 
