@@ -152,35 +152,7 @@ head(GAADdata)
 #Model fitting
 JointCSsurvEST(data=GAADdata, K=6, P=5, Q=5, deg=3, max.m=28, tolerance=10^{-3}, M=20,TRACE=TRUE)
 
-# $loglik
-# [1] -943.2061
-# 
-# $gam.hat
-# [1] 0.1006968 0.0913659 0.4115768 0.5069621 0.8006600 0.3812705 0.5546317
-# 
-# $alpha.hat
-# [1] 1.09652 0.53590
-# 
-# $kappa.hat
-# [1] -0.5807313
-# 
-# $beta.hat
-# [1] 0.901442
-# 
-# $sigma.hat
-# [1] 0.8442931
-# 
-# $alpha.hat.se
-# [1] 0.1303666 0.1338147
-# 
-# $kappa.hat.se
-# [1] 0.173564
-# 
-# $beta.hat.se
-# [1] 0.07883315
-# 
-# $sigma.hat.se
-# [1] 0.1251456
+
 ```
 
 
