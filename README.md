@@ -13,8 +13,8 @@ The package contains 3 functions:
 |Functions  | Description|
 |------------- | -------------|
 BernsteinPolynomial  | Calculate the values of a Bernstein polynomial at given time points.
-ICDASim  | Generate a data set according to the simulation studies in Lam et al. (2021) <DOI: [10.1002/sim.891](https://doi.org/10.1002/sim.8910)>
-Est.ICScure  |  Perform the cluster-weighted GEE or GEE estimation of Lam et al. (2021) <DOI: [10.1002/sim.891](https://doi.org/10.1002/sim.8910)>
+ICDASim  | Generate a data set according to the simulation studies under scenario I of the proposed model in Lee et al. (2022) <DOI: [xx/xx](https://doi.org/10.1002/sim.8910)>
+Est.ICScure  |  Perform the semiparametric estimation method of Lee et al. (2022)  <DOI: [xx/xx](https://doi.org/10.1002/sim.8910)>
 
 # Functions
 > wmcmEM(Yi, cen, X, Z, trace=FALSE, tolerance=10^{-4}) <br />
