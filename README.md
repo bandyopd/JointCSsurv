@@ -8,6 +8,14 @@ JointCSsurv (which stands for <ins>**Joint**</ins> model for <ins>**C**</ins>lus
 > library(devtools) <br /> 
 > source_url("https://github.com/lcyjames/WeibullCMs/blob/845d70f953b0ce692536bfd928fc0c72165fb4a8/CoreFunctions.R?raw=TRUE")
 
+# Usage #
+The package contains 3 functions:
+|Functions  | Description|
+|------------- | -------------|
+BernsteinPolynomial  | Calculate the values of a Bernstein polynomial at given time points.
+ICDASim  | Generate a data set according to the simulation studies in Lam et al. (2021) <DOI: [10.1002/sim.891](https://doi.org/10.1002/sim.8910)>
+Est.ICScure  |  Perform the cluster-weighted GEE or GEE estimation of Lam et al. (2021) <DOI: [10.1002/sim.891](https://doi.org/10.1002/sim.8910)>
+
 # Functions
 > wmcmEM(Yi, cen, X, Z, trace=FALSE, tolerance=10^{-4}) <br />
 This is the estimation procedure of the Weibull Mixture Cure Model based on the EM algorithm.
