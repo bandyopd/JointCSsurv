@@ -119,11 +119,24 @@ Result
 <ins>**GAAD data**</ins>
 
 ```
-load(url(" "))
+GAAD<-read.csv(url(" "))
 head(GAAD)
 ```
 
-The GAAD data contains the following variables. The raw data (GAAD.csv) and its description (GAAD Data Description.txt) can be found in the GitHub.
+This is the raw data from the GAAD study, and its data desciption is as follows:
+>- `id` is the subject id
+>- `tooth` is the teeth label inside a subject's mouth (Universal Numbering System)
+>- `CSTime` is the current status (inspection) time of the adult tooth since emergence, in years.
+>- `delta` = 1, if event observed in time (0, CSTime), = 0 (censored), if observed in (CSTime, infinity)
+>- `Female` = 1 if female, 0 = male
+>- `smoke` = 1 if smoker, 0 = non-smoker
+>- `Hba1c` = 1 if high glycemic level, 0 = controlled
+>- `jaw` = 1 if upper jaw, 0 = lower jaw (a tooth-level covariate)
+>- `CAL` = tooth-level (mean) Clinical Attachment Level (CAL) 
+>- `BMI` = Body Mass Index (a continuous subject-level covariate)
+>- `cluster size` = the size (number of teeth available) for each cluster (subject). 
+>- `Age` = The age of the subject at time of inspection (continuous)
+
 
 
 # Contact #
