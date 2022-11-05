@@ -42,6 +42,15 @@ head(data)
 # 6  2  8 1.7778747 2.428052  0  1  0.03266396  0.3592891
 ```
 
+This data structure is as follows:
+>- id is the sample identifier
+>- cs is the size within a specific cluster
+>- Lij is the left endpoint of an observed interval
+>- Rij is the right endpoint of an observed interval
+>- DL is the left censoring indicator
+>- DI is the interval censoring indicator
+>- X is the covariate in the binomial model without an intercept
+>- Z is the covariate in the proportional hazards model
 
 # Functions
 > wmcmEM(Yi, cen, X, Z, trace=FALSE, tolerance=10^{-4}) <br />
