@@ -20,7 +20,13 @@ Est.ICScure  |  Perform the semiparametric estimation method of Lee et al. (2022
 ```
 JointCSsurvSIM(seed = NA, n, m, beta, alpha, kappa, sigma)
 ```
-This function generates a data set according to the simulation under scenario I of the proposed model in Lee et al. (2022)
+This function generates a data set according to the simulation under scenario I of the proposed model in Lee et al. (2022) with the following arguments:
+>- n is the sample size
+>- m is the maximum cluster size in the binomial distribution
+>- beta is the coefficient in the proportional hazards model
+>- alpha is the coefficients in the binomial model
+>- kappa is the coefficient of the random effect
+>- sigma is the variance of the random effect
 
 Example:
 ```
