@@ -30,7 +30,7 @@ This function generates a data set according to the simulation under scenario I 
 
 Example:
 ```
-data <- JointCSsurvSIM(seed = 1234,n = 50,m = 10,beta = 1,alpha = c(1,log(2)), kappa = -0.5, sigma= 1)
+data <- JointCSsurvSIM(seed = 1234, n = 50, m = 10, beta = 1, alpha = c(1,log(2)), kappa = -0.5, sigma = 1)
 head(data)
 
 #   id cs       Lij      Rij DL DI           X          Z
