@@ -123,7 +123,7 @@ load(url(" "))
 head(GAAD)
 ```
 
-The GAAD data contains the following variables. The raw data (in csv format) and codebook (in txt format) can be obtained in GitHub.
+The GAAD data contains the following variables. The raw data (GAAD.csv) and its description (GAAD Data Description.txt) can be found in the GitHub.
 
 
 # Contact #
