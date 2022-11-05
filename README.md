@@ -140,13 +140,11 @@ This is the raw data from the GAAD study, and its data desciption is as follows:
 Example:
 ```
 #Manipulating the raw data
-GAADdata<-with(GAAD, data.frame(id=id, cs=cluster.size, 
-                           Lij=ifelse(delta==0, NA, CSTime), Rij=ifelse(delta==1, NA, CSTime),
-                           DL=ifelse(delta==0, 0, 1), DI=0, 
+GAADdata<-with(GAAD, data.frame(id=id, cs=cluster.size, Lij=ifelse(delta==0, NA, CSTime), 
+                           Rij=ifelse(delta==1, NA, CSTime), DL=ifelse(delta==0, 0, 1), DI=0, 
                            smoke=smoke, Hba1c=Hba1c, Female=Female, jaw=jaw,  #Tooth level
                            Molar=ifelse(tooth %in% c(2:5,12:15,18:21,28:31),1,0),
-                           smoke=smoke, Hba1c=Hba1c,	Female=Female, Age=Age   #Subject level
-))
+                           smoke=smoke, Hba1c=Hba1c, Female=Female, Age=Age   #Subject level))
 head(GAADdata)
 
 #Model fitting
