@@ -119,8 +119,11 @@ Result
 <ins>**GAAD data**</ins>
 
 ```
-load("GAAD.Rda")
+load(url(" "))
+head(GAAD)
 ```
+
+The GAAD data contains the following variables. The raw data (in csv format) and codebook (in txt format) can be obtained in GitHub.
 
 
 # Contact #
