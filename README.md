@@ -12,8 +12,7 @@ JointCSsurv (which stands for <ins>**Joint**</ins> model for <ins>**C**</ins>lus
 The package contains 3 functions:
 |Functions  | Description|
 |------------- | -------------|
-BernsteinPolynomial  | Calculate the values of a Bernstein polynomial at given time points.
-ICDASim  | Generate a data set according to the simulation studies under scenario I of the proposed model in Lee et al. (2022) <DOI: [xx/xx](https://doi.org/10.1002/sim.8910)>
+JointCSsurvSIM  | Generate a data set according to the simulation studies under scenario I of the proposed model in Lee et al. (2022) <DOI: [xx/xx](https://doi.org/10.1002/sim.8910)>
 Est.ICScure  |  Perform the semiparametric estimation method of Lee et al. (2022)  <DOI: [xx/xx](https://doi.org/10.1002/sim.8910)>
 
 # Functions
