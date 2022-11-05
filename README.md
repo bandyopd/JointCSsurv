@@ -49,8 +49,50 @@ This data structure is as follows:
 >- Rij is the right endpoint of an observed interval, which takes the value NA for left-censored observations
 >- DL is the left censoring indicator
 >- DI is the interval censoring indicator
->- X is the covariate in the proportional hazards model, which can have multiple columns
->- Z is the covariate in the binomial model without an intercept, which can have multiple columns
+>- X is a covariate in the proportional hazards model, which can have multiple columns
+>- Z is a covariate in the binomial model without an intercept, which can have multiple columns
+
+
+ins>**JointCSsurvEST**</ins>
+
+```
+JointCSsurvEST(data, K=7, P, Q, deg=3, max.m, M=20, tolerance=10^{-3}, gam_0=NA, beta_0=NA, alpha_0=NA, kappa_0=NA, sigma_0=NA, TRACE=FALSE)
+```
+This function performs the cluster-weighted GEE or GEE estimation of Lam et al. (2021) <DOI: 10.1002/sim.8910>
+
+`data` is a `n x (p+3)` matrix, where `n` is the sample size and `p` is the number of covariates. The first column consists of cluster indices, the second column consists of the observation time, the third column consists of the event indicator, and the fourth to the last columns consist of the covariates (not including the intercept). The set of covariates can be empty. The format of `data` is as follow:
+
+**Cluster Index**  | **Observation Time**  | **Event Indicator** | **1<sup>st</sup> covariate** | **2<sup>nd</sup> covariate** | ... | **p<sup>th</sup> covariate**
+------------- | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
+1  | 3.7322 | 1 | 1 | 0.0888 | ... | 1
+1  | 4.0000 | 1 | 0 | -0.4965 | ... | 0
+
+
+
+Example:
+```
+Dataset <- ICDASim(seed = 1942, n = 100, beta00 = 0.5, beta10 = -1, beta20 = 1, cs = 40, rho = 0.5, gamma = 0.5)
+Result <- Est.ICScure(data = Dataset, rho = 0.5, degree = 3, weighting = TRUE)
+Result
+
+# $degree
+# [1] 3
+#
+# $psi
+# [1] 0.9917128 0.9955245 1.0000000
+#
+# $beta
+# [1]  0.7091996 -1.0196841  0.9260482
+#
+# $betaSE
+# [1] 0.13000664 0.11749335 0.07599541
+#
+# $iteration
+# [1] 44
+#
+# $covergence
+# [1] "TRUE"
+
 
 # Functions
 > wmcmEM(Yi, cen, X, Z, trace=FALSE, tolerance=10^{-4}) <br />
