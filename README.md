@@ -60,8 +60,8 @@ This data structure is as follows:
 <ins>**JointCSsurvEST**</ins>
 
 ```
-JointCSsurvEST(data, K=7, P, Q, deg=3, max.m, M=20, tolerance=10^{-3}, 
-               gam_0=NA, beta_0=NA, alpha_0=NA, kappa_0=NA, sigma_0=NA, TRACE=FALSE)
+JointCSsurvEST(data, K = 7, P, Q, deg = 3, max.m, M = 20, tolerance = 10^{-3}, 
+               gam_0 = NA, beta_0 = NA, alpha_0 = NA, kappa_0 = NA, sigma_0 = NA, TRACE = FALSE)
 ```
 This function performs the semiparametric estimation methods of Lee et al. (2022). The details of the arguments are as follows:
 >- `data` is a data.frame object shown in the above, with columns `id`, `cs`, `Lij`, `Rij`, `DL`,`DI`,`X[1]`,...,`X[P]`,`Z[1]`,...,`Z[Q-1]`
