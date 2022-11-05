@@ -1,5 +1,5 @@
 # JointCSsurv
-JointCSsurv (which stands for <ins>**Joint**<ins> model for **C**luster **S**ize and **surv**ival outcome) is a package that performs semiparametric estimation and inference for clustered interval-censored data with informative cluster size using the method proposed by Lee et al. (2022) <DOI: xx/xxxx>.
+JointCSsurv (which stands for <ins>**Joint**</ins> model for <ins>**C**</ins>luster <ins>**S**</ins>ize and <ins>**surv**</ins>ival outcome) is a package that performs semiparametric estimation and inference for clustered interval-censored data with informative cluster size using the method proposed by Lee et al. (2022) <DOI: xx/xxxx>.
 
 **JointCSsurv** relies on the R-packages stats, stabledist, numDeriv, MASS, which is hosted on CRAN.
 
