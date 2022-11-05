@@ -119,8 +119,8 @@ Result
 <ins>**GAAD data**</ins>
 
 ```
-GAAD<-read.csv(url(" "))
-head(GAAD)
+GAAD<-read.csv("https://raw.githubusercontent.com/lcyjames/JointCSsurv/main/GAAD.csv")
+GAAD
 ```
 
 This is the raw data from the GAAD study, and its data desciption is as follows:
@@ -137,6 +137,51 @@ This is the raw data from the GAAD study, and its data desciption is as follows:
 >- `cluster size` = the size (number of teeth available) for each cluster (subject). 
 >- `Age` = The age of the subject at time of inspection (continuous)
 
+Example:
+```
+#Manipulating the raw data
+GAADdata<-with(GAAD, data.frame(id=id, cs=cluster.size, 
+                           Lij=ifelse(delta==0, NA, CSTime), Rij=ifelse(delta==1, NA, CSTime),
+                           DL=ifelse(delta==0, 0, 1), DI=0, 
+                           smoke=smoke, Hba1c=Hba1c, Female=Female, jaw=jaw,  #Tooth level
+                           Molar=ifelse(tooth %in% c(2:5,12:15,18:21,28:31),1,0),
+                           smoke=smoke, Hba1c=Hba1c,	Female=Female, Age=Age   #Subject level
+))
+head(GAADdata)
+
+#Model fitting
+JointCSsurvEST(data=GAADdata, K=6, P=5, Q=5, deg=3, max.m=28, tolerance=10^{-3}, M=20,TRACE=TRUE)
+
+# $loglik
+# [1] -943.2061
+# 
+# $gam.hat
+# [1] 0.1006968 0.0913659 0.4115768 0.5069621 0.8006600 0.3812705 0.5546317
+# 
+# $alpha.hat
+# [1] 1.09652 0.53590
+# 
+# $kappa.hat
+# [1] -0.5807313
+# 
+# $beta.hat
+# [1] 0.901442
+# 
+# $sigma.hat
+# [1] 0.8442931
+# 
+# $alpha.hat.se
+# [1] 0.1303666 0.1338147
+# 
+# $kappa.hat.se
+# [1] 0.173564
+# 
+# $beta.hat.se
+# [1] 0.07883315
+# 
+# $sigma.hat.se
+# [1] 0.1251456
+```
 
 
 # Contact #
