@@ -1,7 +1,7 @@
 # JointCSsurv
-JointCSsurv (which stands for Joint model for Cluster Size and survival outcome) is a package that performs estimation and inference for clustered interval-censored data with informative cluster size using the method proposed by Lee et al. (2022) <DOI: xx/xxxx>.
+JointCSsurv (which stands for Joint model for Cluster Size and survival outcome) is a package that performs semiparametric estimation and inference for clustered interval-censored data with informative cluster size using the method proposed by Lee et al. (2022) <DOI: xx/xxxx>.
 
-This package performs parameter estimation for the cure mixture and nonmixture models based on right-censored data. The two-parameter Weibull distribution is assumed for the latency component. The cure mixture model assumes a logistic model for the incidence component, and the non-mixture model assumes the complementary log-log model for the incidence component. The parameter estimation for both parametric cure models is performed based on the EM algorithm.
+**JointCSsurv** relies on the R-packages stats, stabledist, numDeriv, MASS, which is hosted on CRAN.
 
 # How to import the Functions
 > install.packages("devtools")<br />
