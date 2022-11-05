@@ -49,8 +49,8 @@ This data structure is as follows:
 >- Rij is the right endpoint of an observed interval, which takes the value NA for left-censored observations
 >- DL is the left censoring indicator
 >- DI is the interval censoring indicator
->- X is the covariate in the proportional hazards model, which can have multiple columns for P>1
->- Z is the covariate in the binomial model without an intercept, which can have multiple columns for Q>2
+>- X is the covariate in the proportional hazards model, which can have multiple (P>1) columns
+>- Z is the covariate in the binomial model without an intercept, which can have multiple {(Q-1)>1} columns
 
 # Functions
 > wmcmEM(Yi, cen, X, Z, trace=FALSE, tolerance=10^{-4}) <br />
