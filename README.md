@@ -1,5 +1,5 @@
 # JointCSsurv
-JointCSsurv (which stands for <ins>**Joint**</ins> model for <ins>**C**</ins>luster <ins>**S**</ins>ize and <ins>**surv**</ins>ival outcome) is a package that performs semiparametric estimation and inference for clustered interval-censored data with informative cluster size using the method proposed by Lee et al. (2022) <DOI: xx/xxxx>.
+JointCSsurv (which stands for <ins>**Joint**</ins> model for <ins>**C**</ins>luster <ins>**S**</ins>ize and <ins>**surv**</ins>ival outcome) is a package that performs semiparametric estimation and inference for clustered interval-censored data with informative cluster size using the method proposed by Lee et al. (2022) <DOI: [xx/xx] (https://doi.org/10.1002/sim.8910)>.
 
 **JointCSsurv** relies on the R-packages `splines2`, `numDeriv`, `statmod`, `plyr`, which are hosted on CRAN.
 
@@ -12,15 +12,15 @@ JointCSsurv (which stands for <ins>**Joint**</ins> model for <ins>**C**</ins>lus
 The package contains 3 functions:
 |Functions  | Description|
 |------------- | -------------|
-JointCSsurvSIM  | Generate a data set according to the simulation under scenario I of the proposed model in Lee et al. (2022) <DOI: [xx/xx](https://doi.org/10.1002/sim.8910)>
-Est.ICScure  |  Perform the semiparametric estimation method of Lee et al. (2022)  <DOI: [xx/xx](https://doi.org/10.1002/sim.8910)>
+JointCSsurvSIM  | Generate a data set according to the simulation under scenario I of the proposed model in Lee et al. (2022)
+Est.ICScure  |  Perform the semiparametric estimation method of Lee et al. (2022)
 
 <ins>**JointCSsurvSIM**</ins>
 
 ```
 JointCSsurvSIM(seed = NA, n, m, beta, alpha, kappa, sigma)
 ```
-This function generates a data set according to the simulation under scenario I of the proposed model in Lee et al. (2022) <DOI: 10.1002/sim.8910>.
+This function generates a data set according to the simulation under scenario I of the proposed model in Lee et al. (2022)
 
 Example:
 ```
