@@ -144,7 +144,7 @@ Example:
 GAADdata<-with(GAAD, data.frame(id=id, cs=cluster.size, Lij=ifelse(delta==0, NA, CSTime), 
                            Rij=ifelse(delta==1, NA, CSTime), DL=ifelse(delta==0, 0, 1), DI=0, 
                            smoke=smoke, Hba1c=Hba1c, Female=Female, jaw=jaw, Molar=ifelse(tooth %in% c(2:5,12:15,18:21,28:31),1,0),
-                           smoke=smoke, Hba1c=Hba1c, Female=Female, Age=Age))
+                           smoke.1=smoke, Hba1c.1=Hba1c, Female.1=Female, Age=Age))
 #Model fitting
 JointCSsurvEST(data=GAADdata, K=6, P=5, Q=5, deg=3, max.m=28, tolerance=10^{-6}, M=20,TRACE=TRUE) 
 #The program converges after 894 iterations
