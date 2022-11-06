@@ -147,6 +147,7 @@ GAADdata<-with(GAAD, data.frame(id=id, cs=cluster.size, Lij=ifelse(delta==0, NA,
                            smoke=smoke, Hba1c=Hba1c, Female=Female, Age=Age))
 #Model fitting
 JointCSsurvEST(data=GAADdata, K=6, P=5, Q=5, deg=3, max.m=28, tolerance=10^{-6}, M=20,TRACE=TRUE) 
+#The program converge after 894 iterations
 ```
 
 
