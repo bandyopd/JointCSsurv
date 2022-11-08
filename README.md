@@ -15,10 +15,6 @@ The package contains 2 functions and 1 dataset:
 JointCSsurvSIM  | Generate a data set according to the simulation study in Lee et al. (2022)
 JointCSsurvEST  | Perform the semiparametric estimation methods of Lee et al. (2022)
 
-|Dataset | Description|
-|------------- | -------------|
-GAAD | A cross-sectional periodontal disease study conducted on Gullah-speaking African-American Type-2 Diabetics (GAAD)
-
 <ins>**JointCSsurvSIM**</ins>
 
 ```
