@@ -116,41 +116,6 @@ Result
 # [1] 0.1251456
 ```
 
-# How to import the data
-<ins>**GAAD data**</ins>
-
-```
-GAAD<-read.csv("https://raw.githubusercontent.com/lcyjames/JointCSsurv/main/GAAD.csv")
-GAAD
-```
-
-This is the raw data from the GAAD study, and its data desciption is as follows:
->- `id` is the subject id
->- `tooth` is the teeth label inside a subject's mouth (Universal Numbering System)
->- `CSTime` is the current status (inspection) time of the adult tooth since emergence, in years.
->- `delta` = 1, if event observed in time (0, CSTime), = 0 (censored), if observed in (CSTime, infinity)
->- `Female` = 1 if female, 0 = male
->- `smoke` = 1 if smoker, 0 = non-smoker
->- `Hba1c` = 1 if high glycemic level, 0 = controlled
->- `jaw` = 1 if upper jaw, 0 = lower jaw (a tooth-level covariate)
->- `CAL` = tooth-level (mean) Clinical Attachment Level (CAL) 
->- `BMI` = Body Mass Index (a continuous subject-level covariate)
->- `cluster size` = the size (number of teeth available) for each cluster (subject). 
->- `Age` = The age of the subject at time of inspection (continuous)
-
-Example:
-```
-#Manipulating the raw data
-GAADdata<-with(GAAD, data.frame(id=id, cs=cluster.size, Lij=ifelse(delta==0, NA, CSTime), 
-                           Rij=ifelse(delta==1, NA, CSTime), DL=ifelse(delta==0, 0, 1), DI=0, 
-                           smoke=smoke, Hba1c=Hba1c, Female=Female, jaw=jaw, Molar=ifelse(tooth %in% c(2:5,12:15,18:21,28:31),1,0),
-                           smoke.1=smoke, Hba1c.1=Hba1c, Female.1=Female, Age=Age))
-#Model fitting
-JointCSsurvEST(data=GAADdata, K=6, P=5, Q=5, deg=3, max.m=28, tolerance=10^{-6}, M=20,TRACE=TRUE) 
-#The program converges after 894 iterations
-```
-
-
 # Contact #
 Lee Chun Yin, James <<james-chun-yin.lee@polyu.edu.hk>>
 
