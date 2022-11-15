@@ -120,6 +120,3 @@ Lee Chun Yin, James <<james-chun-yin.lee@polyu.edu.hk>>
 # Reference #
 Lee, C. Y., Wong, K. Y., Lam, K. F.,& Bandyopadhyay, D. (2022). A semiparametric joint model for cluster size and subunit-specific interval-censored
 outcomes. Biometrics [online], DOI:xx/xx
-
-Fernandes, J. K., Wiegand, R. E., Salinas, C. F., Grossi, S. G., Sanders, J. J., Lopes‐Virella, M. F., & Slate, E. H. (2009). Periodontal disease status in Gullah African Americans with type 2 diabetes living in South Carolina. Journal of Periodontology, 80(7), 1062-1068, DOI:10.1902/jop.2009.080486
-
