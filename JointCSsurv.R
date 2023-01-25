@@ -1,4 +1,4 @@
-list.of.packages <- c("splines2", "numDeriv","statmod")
+list.of.packages <- c("splines2", "numDeriv", "statmod")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 
