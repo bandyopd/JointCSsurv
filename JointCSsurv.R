@@ -1,6 +1,10 @@
-require(splines2)
-require(numDeriv)
-require(statmod)
+list.of.packages <- c("splines2", "numDeriv","statmod")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages)
+
+library(splines2)
+library(numDeriv)
+library(statmod)
 
 Lik.i<-function(t,gam.d,beta.d,alpha.d,c.d,sigma.d,Lij.vec,Rij.vec,DeltaL.vec,DeltaI.vec,Z.vec,Xij.vec,LRij.vec,ibsMat,max.m,loga){
   
