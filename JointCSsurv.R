@@ -1,6 +1,6 @@
-library(splines2)
-library(numDeriv)
-library(statmod)
+require(splines2)
+require(numDeriv)
+require(statmod)
 
 Lik.i<-function(t,gam.d,beta.d,alpha.d,c.d,sigma.d,Lij.vec,Rij.vec,DeltaL.vec,DeltaI.vec,Z.vec,Xij.vec,LRij.vec,ibsMat,max.m,loga){
   
