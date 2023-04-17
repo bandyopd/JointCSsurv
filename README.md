@@ -73,8 +73,8 @@ This function performs the semiparametric estimation methods of Lee et al. (2022
 >- `gam_0` is a vector of positive constants of size `K` for the initial values of gamma, set to be rep(2,K) by default (gam_0=NA)
 >- `beta_0` is a vector of constants of size `P` for the initial values of parameter beta, set to be rep(0,P) by default (beta_0=NA)
 >- `alpha_0` is a vector of constants of size `Q` for the initial values of parameter alpha, set to be rep(0,Q) by default (alpha_0=NA)
->- `kappa_0` is a constant for the initial values of parameter kappa, set to be 0 by default (kappa_0=NA)
->- `sigma_0` is a constant for the initial values of parameter sigma, set to be 2 by default (sigma_0=NA)
+>- `kappa_0` is a constant for the initial value of parameter kappa, set to be 0 by default (kappa_0=NA)
+>- `sigma_0` is a constant for the initial value of parameter sigma, set to be 2 by default (sigma_0=NA)
 >- `TRACE` is an option for tracking the converging path of the parameter estimation, set to be FALSE by default
 
 Example:
