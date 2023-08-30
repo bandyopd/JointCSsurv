@@ -32,8 +32,8 @@ This function generates a data set according to the model under scenario I of th
 
 Example:
 ```
-Dataset <- JointCSsurvSIM(seed = 1234, n = 50, m = 10, beta = 1, alpha = c(1,log(2)), kappa = -0.5, sigma = 1)
-head(Dataset)
+Data <- JointCSsurvSIM(seed = 1234, n = 50, m = 10, beta = 1, alpha = c(1,log(2)), kappa = -0.5, sigma = 1)
+head(Data)
 
 #   id cs       Lij      Rij DL DI           X          Z
 # 1  1  3 1.5548184 2.194611  0  1  0.08005964 -1.2070657
@@ -79,8 +79,8 @@ This function performs the semiparametric estimation methods of Lee et al. (2022
 
 Example:
 ```
-Dataset<-JointCSsurvSIM(seed = 1234, n = 50, m = 10, beta = 1, alpha = c(1,log(2)), kappa = -0.5, sigma= 1)
-Result <-JointCSsurvEST(data = Dataset, K = 7, P = 1, Q = 2, deg = 3, max.m = 10, tolerance = 10^{-3}, M = 20, TRACE = FALSE)
+Data<-JointCSsurvSIM(seed = 1234, n = 50, m = 10, beta = 1, alpha = c(1,log(2)), kappa = -0.5, sigma= 1)
+Result <-JointCSsurvEST(data = Data, K = 7, P = 1, Q = 2, deg = 3, max.m = 10, tolerance = 10^{-3}, M = 20, TRACE = FALSE)
 Result
 
 # $loglik
