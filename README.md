@@ -32,8 +32,8 @@ This function generates a data set according to the model under scenario I of th
 
 Example:
 ```
-data <- JointCSsurvSIM(seed = 1234, n = 50, m = 10, beta = 1, alpha = c(1,log(2)), kappa = -0.5, sigma = 1)
-head(data)
+Dataset <- JointCSsurvSIM(seed = 1234, n = 50, m = 10, beta = 1, alpha = c(1,log(2)), kappa = -0.5, sigma = 1)
+head(Dataset)
 
 #   id cs       Lij      Rij DL DI           X          Z
 # 1  1  3 1.5548184 2.194611  0  1  0.08005964 -1.2070657
