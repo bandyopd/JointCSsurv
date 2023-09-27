@@ -6,7 +6,7 @@ JointCSsurv (which stands for <ins>**Joint**</ins> model for <ins>**C**</ins>lus
 # How to import the Functions #
 > install.packages("devtools")<br />
 > library(devtools) <br /> 
-> source_url("https://github.com/lcyjames/JointCSsurv/blob/50057f050334e59f038596c898d492be1dbb708a/JointCSsurv.R?raw=TRUE")
+> source_url("https://github.com/lcyjames/JointCSsurv/blob/main/JointCSsurv.R?raw=TRUE")
 
 
 
