@@ -118,5 +118,5 @@ Result
 Lee Chun Yin, James <<james-chun-yin.lee@polyu.edu.hk>>
 
 # Reference #
-Lee, C. Y., Wong, K. Y., Lam, K. F.,& Bandyopadhyay, D. (2022). A semiparametric joint model for cluster size and subunit-specific interval-censored
+Lee, C. Y., Wong, K. Y., Lam, K. F., and Bandyopadhyay, D. (2022). A semiparametric joint model for cluster size and subunit-specific interval-censored
 outcomes. Biometrics [online], DOI: [10.1111/biom.13795](https://doi.org/10.1111/biom.13795).
